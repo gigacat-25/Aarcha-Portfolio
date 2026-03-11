@@ -1,186 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Aarcha Ullasan</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works – Aarcha Ullasan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700;900&family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <div class="container">
-        <nav>
-            <a href="index.html" class="nav-link brutal-border brutal-shadow bg-yellow">ABOUT</a>
-            <a href="portfolio.html" class="nav-link brutal-border brutal-shadow bg-black active">PORTFOLIO</a>
-            <a href="contact.html" class="nav-link brutal-border brutal-shadow bg-yellow">CONTACT</a>
-        </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-overlay" id="navOverlay">
+    <button class="close-btn" id="closeBtn" aria-label="Close Menu">✕</button>
+    <nav class="overlay-nav">
+      <a href="index.html" class="overlay-link">Home</a>
+      <a href="about.html" class="overlay-link">About</a>
+      <a href="portfolio.html" class="overlay-link">Works</a>
+      <a href="contact.html" class="overlay-link">Contact</a>
+    </nav>
+  </div>
 
-        <main>
-            <h2 style="font-size: 2.5rem; text-align: center; margin: 3rem 0;">My Projects</h2>
-
-            <div class="portfolio-grid">
-
-                <!-- Project: ImpactOne -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Next.js · TypeScript · AI</div>
-                    <div class="project-header bg-white">
-                        ImpactOne – Smart Facility Booking
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">A smart facility booking web app simplifying coordination between students and administration. Features AI-powered venue recommendations using Google Genkit &amp; Gemini, Clerk auth, and Supabase for real-time database management.</p>
-                        <a href="https://github.com/aarch34/ImpactOne" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project: Wandere.ai -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">React · Python · AI</div>
-                    <div class="project-header bg-white">
-                        Wandere.ai – AI Travel Planner
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">A personalized AI travel itinerary generator. Crafts custom daily plans balancing activities, meals, rest, and transit. Integrates real traveler reviews and adapts plans in real-time based on weather and local events. Built with React, Python, Auth0, MongoDB, and Google Gemini.</p>
-                        <a href="https://devfolio.co/projects/wandereai-9536" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View Project →</a>
-                    </div>
-                </div>
-
-                <!-- Project: vani-vision -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Python · OpenCV · TTS</div>
-                    <div class="project-header bg-white">
-                        Vani Vision – Assistive AI
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">An assistive AI tool for visually impaired individuals featuring OCR, an emotion engine, offline Text-to-Speech, and multilingual support. Built to remove barriers and enhance independence.</p>
-                        <a href="https://github.com/aarch34/vani-vision" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project: Sign Language Translator -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Python · OpenCV · ML</div>
-                    <div class="project-header bg-white">
-                        Sign Language Translator
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">A real-time sign language translator that recognizes 5 essential ASL gestures — Hello, Thank You, Please, I Love You, and Sorry — into text. Trained a CNN model on a custom hand gesture dataset using OpenCV.</p>
-                        <a href="https://github.com/aarch34/Sign-language-translation" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project: StackSwipe -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Next.js · Firebase · AI</div>
-                    <div class="project-header bg-white">
-                        StackSwipe – Dev Networking
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">A professional networking platform designed for developers and designers, featuring AI-powered ice-breakers to help make meaningful connections. Built with Next.js, Firebase, and TypeScript.</p>
-                        <a href="https://github.com/aarch34/StackSwipe" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project: Pantry Tracker -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Next.js · Firebase · MUI</div>
-                    <div class="project-header bg-white">
-                        Pantry Tracker – Inventory SaaS
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">A SaaS inventory tracking and management application. Users can add, remove, and search pantry items with a clean Material UI interface. Built with Next.js and Firebase.</p>
-                        <a href="https://github.com/aarch34/Pantry-Tracker" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project: Safebites AI -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Next.js · Clerk · GROQ</div>
-                    <div class="project-header bg-white">
-                        Safebites – AI Recipe AI
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">An allergy-friendly AI system for recipe recommendations using Next.js, Clerk, React, and GROQ. Features a secure, intuitive interface with real-time interactions to provide personalized and safe recipe suggestions.</p>
-                        <a href="https://github.com/aarch34/Safebites-AI" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project: AI Chatbot -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">React · Google Gemini</div>
-                    <div class="project-header bg-white">
-                        AI Chatbot – Gemini Powered
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">A responsive conversational chatbot integrated with the Google Gemini API. Built with React for a smooth, dynamic user experience with real-time AI responses.</p>
-                        <a href="https://github.com/aarch34/AI-Chatbot" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project: AI Flashcards -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Next.js · TypeScript · AI</div>
-                    <div class="project-header bg-white">
-                        AI Flashcards – Study SaaS
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">A web app that automatically generates flashcards from user-provided text using AI powered by LLaMA3. Features a Next.js + TypeScript frontend for interactive flashcard review and easy navigation.</p>
-                        <a href="https://github.com/aarch34/AI-Flashcards" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project: E-Commerce Jewelry Store -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Django · MySQL · HTML/CSS</div>
-                    <div class="project-header bg-white">
-                        Jewelry E-Commerce Store
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">A Python-based web application using Django framework and MySQL database. Features backend logic for authentication, cart management, and order processing. Designed relational database models with Django ORM.</p>
-                        <a href="https://github.com/aarch34/E-commerce" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <!-- Project: 2D Portfolio -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Kaboom.js · JavaScript</div>
-                    <div class="project-header bg-white">
-                        2D RPG Portfolio Website
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">An interactive 2D game-like personal portfolio built with Kaboom.js and HTML. Visitors navigate a character through "rooms" to explore projects, skills, and experience — a uniquely creative showcase.</p>
-                        <a href="https://aarch34.github.io/" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">Live Demo →</a>
-                    </div>
-                </div>
-
-                <!-- Project: NexMeet -->
-                <div class="project-card brutal-border brutal-shadow bg-yellow">
-                    <div class="project-label brutal-border">Open Source Contribution</div>
-                    <div class="project-header bg-white">
-                        NexMeet – Meeting Platform
-                    </div>
-                    <div class="project-body">
-                        <p class="project-desc">Contributed to NexMeet, a meeting and networking platform for professionals. Implemented features and submitted pull requests as part of open source collaboration during GSSoC.</p>
-                        <a href="https://github.com/aarch34/nexmeet" target="_blank" class="project-btn brutal-border brutal-shadow bg-white">View on GitHub →</a>
-                    </div>
-                </div>
-
-            </div>
-        </main>
-
-        <footer class="footer-container">
-            <div class="footer-icon" style="top: 5px; left: 10%;">💻</div>
-            <div class="footer-icon" style="bottom: 5px; right: 15%;">🤖</div>
-            <p class="footer-text">"Building AI-powered experiences, one commit at a time."</p>
-        </footer>
+  <!-- Hero Banner -->
+  <section class="page-hero works-hero">
+    <div class="works-bg"></div>
+    <div class="star star-4 star-yellow" style="top:25%;left:15%;font-size:2.5rem;">✦</div>
+    <div class="star star-4 star-yellow" style="bottom:25%;right:12%;font-size:2rem;animation-delay:0.5s;">✦</div>
+    <div class="star-plus star-white" style="top:20%;right:35%;">+</div>
+    <div class="star-plus star-white" style="bottom:30%;left:30%;">+</div>
+    <div class="works-hero-heading">
+      <h1 class="page-hero-title works-script">Works</h1>
+      <div class="portfolio-badge">PORTFOLIO</div>
     </div>
+    <p class="works-tagline">Dive into my latest works — where <span class="highlight-pill">creativity</span> meets craftsmanship.</p>
+  </section>
 
-    <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <button class="filter-pill active" id="filter-all" data-filter="all">⊹ ALL</button>
+    <button class="filter-pill" id="filter-ai" data-filter="ai">⊹ AI / ML</button>
+    <button class="filter-pill" id="filter-web" data-filter="web">⊹ WEB</button>
+    <button class="filter-pill" id="filter-fullstack" data-filter="fullstack">⊹ FULL STACK</button>
+  </div>
+
+  <!-- Projects Grid -->
+  <section class="projects-section">
+    <div class="projects-grid" id="projectsGrid">
+
+      <div class="project-card-new" data-category="ai fullstack">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Next.js · TypeScript · AI</div>
+          <h3 class="project-card-title">ImpactOne</h3>
+          <p class="project-card-sub">Smart Facility Booking Web App</p>
+          <p class="project-card-desc">AI-powered venue recommendations using Google Genkit & Gemini. Clerk auth, Supabase DB, and real-time booking coordination between students and administration.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/ImpactOne" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="ai web fullstack">
+        <div class="project-card-inner">
+          <div class="project-card-badge">React · Python · Gemini</div>
+          <h3 class="project-card-title">Wandere.ai</h3>
+          <p class="project-card-sub">AI Travel Itinerary Generator</p>
+          <p class="project-card-desc">Hackathon winner at Hack This Fall 2024 Virtual. Crafts custom daily travel plans balancing activities, meals, and transit. Integrates real-time weather and local events.</p>
+          <div class="project-card-footer">
+            <a href="https://devfolio.co/projects/wandereai-9536" target="_blank" class="project-link-btn">Devfolio →</a>
+            <a href="https://github.com/aarch34/Wandere.ai" target="_blank" class="project-link-btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="ai">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Python · OCR · TTS</div>
+          <h3 class="project-card-title">Vani Vision</h3>
+          <p class="project-card-sub">Assistive AI for Visually Impaired</p>
+          <p class="project-card-desc">Assistive AI tool featuring OCR, an emotion engine, offline Text-to-Speech, and multilingual support. Built to enhance independence for visually impaired individuals.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/vani-vision" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="ai">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Python · CNN · OpenCV</div>
+          <h3 class="project-card-title">Sign Language Translator</h3>
+          <p class="project-card-sub">Real-time ASL Recognition</p>
+          <p class="project-card-desc">Recognizes 5 essential ASL gestures in real time — Hello, Thank You, Please, I Love You, and Sorry. Trained a CNN model on custom webcam hand-gesture data.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/Sign-language-translation" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="web fullstack ai">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Next.js · Firebase · AI</div>
+          <h3 class="project-card-title">StackSwipe</h3>
+          <p class="project-card-sub">Developer Networking Platform</p>
+          <p class="project-card-desc">Tinder-style professional networking for developers & designers with AI-powered ice-breakers. Built with Next.js, Firebase, and TypeScript.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/StackSwipe" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="web fullstack">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Next.js · Firebase · MUI</div>
+          <h3 class="project-card-title">Pantry Tracker</h3>
+          <p class="project-card-sub">Inventory Management SaaS</p>
+          <p class="project-card-desc">A SaaS inventory tracking app with real-time add/remove/search capabilities and a clean Material UI interface powered by Firebase.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/Pantry-Tracker" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="web ai">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Next.js · Clerk · GROQ</div>
+          <h3 class="project-card-title">Safebites AI</h3>
+          <p class="project-card-sub">Allergy-Friendly Recipe Recommender</p>
+          <p class="project-card-desc">AI-powered food recommendation system using GROQ and Next.js. Provides personalized, allergy-safe recipe suggestions with a smooth real-time interface.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/Safebites-AI" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="web ai">
+        <div class="project-card-inner">
+          <div class="project-card-badge">React · Google Gemini</div>
+          <h3 class="project-card-title">AI Chatbot</h3>
+          <p class="project-card-sub">Gemini-Powered Conversational AI</p>
+          <p class="project-card-desc">A responsive and dynamic chatbot powered by the Google Gemini API. Built in React with smooth UI/UX and real-time AI responses.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/AI-Chatbot" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="web ai fullstack">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Next.js · TypeScript · LLaMA3</div>
+          <h3 class="project-card-title">AI Flashcards</h3>
+          <p class="project-card-sub">Study SaaS with AI Generation</p>
+          <p class="project-card-desc">Web app that auto-generates flashcards from user-provided text using LLaMA3 AI. Next.js + TypeScript frontend for interactive review and navigation.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/AI-Flashcards" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="web fullstack">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Django · MySQL · HTML/CSS</div>
+          <h3 class="project-card-title">Jewelry E-Commerce</h3>
+          <p class="project-card-sub">Full Stack E-Commerce Store</p>
+          <p class="project-card-desc">Python/Django web app with MySQL database. Includes authentication, cart management, order processing, and a responsive front-end with Django ORM.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/E-commerce" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="web">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Kaboom.js · JavaScript</div>
+          <h3 class="project-card-title">2D RPG Portfolio</h3>
+          <p class="project-card-sub">Interactive Game Portfolio</p>
+          <p class="project-card-desc">An interactive 2D game-like portfolio built with Kaboom.js. Visitors navigate a character through RPG "rooms" to discover projects, skills, and experience.</p>
+          <div class="project-card-footer">
+            <a href="https://aarch34.github.io/" target="_blank" class="project-link-btn">Live →</a>
+            <a href="https://github.com/aarch34/aarch34.github.io" target="_blank" class="project-link-btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-new" data-category="web fullstack">
+        <div class="project-card-inner">
+          <div class="project-card-badge">Open Source · GSSoC</div>
+          <h3 class="project-card-title">NexMeet</h3>
+          <p class="project-card-sub">Professional Meeting Platform</p>
+          <p class="project-card-desc">Contributed to NexMeet — a meeting and networking platform for professionals. Implemented features and submitted pull requests during GSSoC 2024.</p>
+          <div class="project-card-footer">
+            <a href="https://github.com/aarch34/nexmeet" target="_blank" class="project-link-btn">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-text">Let's build something <span class="highlight-pill">magical</span> together ✦</p>
+    <div class="footer-links">
+      <a href="https://github.com/aarch34" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/aarcha-u" target="_blank">LinkedIn</a>
+      <a href="mailto:aarcha.u@yahoo.com">Email</a>
+    </div>
+    <p class="footer-copy">© 2025 Aarcha Ullasan</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>

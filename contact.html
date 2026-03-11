@@ -1,56 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Aarcha Ullasan</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Aarcha Ullasan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700;900&family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <div class="container">
-        <nav>
-            <a href="index.html" class="nav-link brutal-border brutal-shadow bg-yellow">ABOUT</a>
-            <a href="portfolio.html" class="nav-link brutal-border brutal-shadow bg-yellow">PORTFOLIO</a>
-            <a href="contact.html" class="nav-link brutal-border brutal-shadow bg-black active">CONTACT</a>
-        </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-overlay" id="navOverlay">
+    <button class="close-btn" id="closeBtn" aria-label="Close Menu">✕</button>
+    <nav class="overlay-nav">
+      <a href="index.html" class="overlay-link">Home</a>
+      <a href="about.html" class="overlay-link">About</a>
+      <a href="portfolio.html" class="overlay-link">Works</a>
+      <a href="contact.html" class="overlay-link">Contact</a>
+    </nav>
+  </div>
 
-        <main class="contact-wrapper">
-            <div class="contact-card brutal-border brutal-shadow bg-white">
-                <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Let's Connect</h2>
-                <p>I'm always open to discussing new projects, creative ideas, AI collaborations, or opportunities to be part of your visions.</p>
+  <!-- Hero Banner -->
+  <section class="page-hero contact-hero">
+    <div class="hero-bg"></div>
+    <div class="star star-4 star-yellow" style="top:20%;left:20%;font-size:2.5rem;">✦</div>
+    <div class="star star-4 star-yellow" style="bottom:20%;right:15%;font-size:3rem;animation-delay:0.8s;">✦</div>
+    <div class="star-plus star-white" style="top:35%;right:25%;">+</div>
+    <div class="star-plus star-white" style="bottom:35%;left:25%;">+</div>
+    <h1 class="page-hero-title" style="color:#FF7BAC;">Say Hello!</h1>
+  </section>
 
-                <div class="social-links">
-                    <a href="https://github.com/aarch34" target="_blank" class="social-btn github brutal-border brutal-shadow">
-                        <i data-lucide="github"></i> GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/aarcha-u" target="_blank" class="social-btn linkedin brutal-border brutal-shadow">
-                        <i data-lucide="linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://aarch34.github.io/" target="_blank" class="social-btn portfolio brutal-border brutal-shadow">
-                        <i data-lucide="globe"></i> 2D Portfolio
-                    </a>
-                    <a href="mailto:aarcha.u@yahoo.com" class="social-btn email brutal-border brutal-shadow">
-                        <i data-lucide="mail"></i> Email Me
-                    </a>
-                </div>
+  <!-- Contact Content -->
+  <section class="contact-section">
+    <div class="about-bg-pink"></div>
+
+    <div class="contact-inner">
+      <div class="contact-intro">
+        <h2 class="section-script" style="color:#FF7BAC;font-size:3rem;">Let's Connect</h2>
+        <p class="bio-p" style="max-width:500px;margin:0 auto;">
+          I'm always open to discussing new projects, creative ideas,
+          <span class="highlight-pill">AI collaborations</span>,
+          or opportunities to be part of your vision.
+          Feel free to reach out!
+        </p>
+      </div>
+
+      <div class="contact-cards">
+        <a href="https://github.com/aarch34" target="_blank" class="contact-card-link">
+          <div class="contact-info-card">
+            <div class="contact-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
             </div>
-        </main>
+            <div class="contact-card-text">
+              <h3>GitHub</h3>
+              <p>github.com/aarch34</p>
+            </div>
+          </div>
+        </a>
 
-        <footer class="footer-container">
-            <div class="footer-icon" style="top: 5px; left: 10%;">💻</div>
-            <div class="footer-icon" style="bottom: 5px; right: 15%;">🤖</div>
-            <p class="footer-text">"Building AI-powered experiences, one commit at a time."</p>
-        </footer>
+        <a href="https://www.linkedin.com/in/aarcha-u" target="_blank" class="contact-card-link">
+          <div class="contact-info-card contact-info-card--blue">
+            <div class="contact-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="contact-card-text">
+              <h3>LinkedIn</h3>
+              <p>linkedin.com/in/aarcha-u</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="mailto:aarcha.u@yahoo.com" class="contact-card-link">
+          <div class="contact-info-card contact-info-card--pink">
+            <div class="contact-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-card-text">
+              <h3>Email</h3>
+              <p>aarcha.u@yahoo.com</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://aarch34.github.io/" target="_blank" class="contact-card-link">
+          <div class="contact-info-card contact-info-card--yellow">
+            <div class="contact-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <div class="contact-card-text">
+              <h3>2D Portfolio</h3>
+              <p>aarch34.github.io</p>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
+  </section>
 
-    <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+  <footer class="site-footer">
+    <p class="footer-text">Let's build something <span class="highlight-pill">magical</span> together ✦</p>
+    <div class="footer-links">
+      <a href="https://github.com/aarch34" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/aarcha-u" target="_blank">LinkedIn</a>
+      <a href="mailto:aarcha.u@yahoo.com">Email</a>
+    </div>
+    <p class="footer-copy">© 2025 Aarcha Ullasan</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>

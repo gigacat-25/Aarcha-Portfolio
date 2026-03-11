@@ -1,97 +1,79 @@
+/* ============================================
+   SCRIPT.JS — Aarcha Portfolio
+   Menu Toggle + Project Filter
+   ============================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  const techData = {
-    Frontend: [
-      { name: 'HTML5', icon: 'file-code-2' },
-      { name: 'CSS3', icon: 'palette' },
-      { name: 'JavaScript', icon: 'file-json' },
-      { name: 'React', icon: 'atom' },
-      { name: 'Next.js', icon: 'triangle' },
-      { name: 'Tailwind', icon: 'wind' },
-      { name: 'Material UI', icon: 'layout' }
-    ],
-    Languages: [
-      { name: 'Python', icon: 'terminal' },
-      { name: 'JavaScript', icon: 'file-json' },
-      { name: 'TypeScript', icon: 'file-type-2' },
-      { name: 'HTML', icon: 'file-code-2' },
-      { name: 'CSS', icon: 'palette' },
-      { name: 'C', icon: 'file-code' }
-    ],
-    Backend: [
-      { name: 'Django', icon: 'server' },
-      { name: 'Node.js', icon: 'server' },
-      { name: 'Firebase', icon: 'flame' },
-      { name: 'Supabase', icon: 'database' },
-      { name: 'Clerk', icon: 'lock' },
-      { name: 'Auth0', icon: 'shield' }
-    ],
-    Database: [
-      { name: 'MySQL', icon: 'database' },
-      { name: 'MongoDB', icon: 'database' },
-      { name: 'Firebase', icon: 'flame' },
-      { name: 'Supabase', icon: 'database' }
-    ],
-    AI: [
-      { name: 'Google Gemini', icon: 'sparkles' },
-      { name: 'LLaMA3', icon: 'brain' },
-      { name: 'GROQ', icon: 'zap' },
-      { name: 'OpenCV', icon: 'camera' },
-      { name: 'Kaboom.js', icon: 'gamepad-2' }
-    ],
-    Tools: [
-      { name: 'Git', icon: 'git-branch' },
-      { name: 'GitHub', icon: 'github' },
-      { name: 'Vercel', icon: 'triangle' },
-      { name: 'VS Code', icon: 'code' },
-      { name: 'Canva', icon: 'image' },
-      { name: 'Postman', icon: 'send' }
-    ]
-  };
+  /* ---- Hamburger Menu ---- */
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const navOverlay = document.getElementById('navOverlay');
 
-  const categoriesContainer = document.getElementById('tech-categories');
-  const iconsContainer = document.getElementById('tech-icons');
-
-  if (categoriesContainer && iconsContainer) {
-    let activeCategory = 'Frontend';
-
-    function renderCategories() {
-      categoriesContainer.innerHTML = '';
-      Object.keys(techData).forEach(category => {
-        const btn = document.createElement('div');
-        btn.className = `tech-category-btn brutal-border brutal-shadow ${category === activeCategory ? 'active' : ''}`;
-        btn.textContent = category;
-        btn.onclick = () => {
-          activeCategory = category;
-          renderCategories();
-          renderIcons();
-        };
-        categoriesContainer.appendChild(btn);
-      });
-    }
-
-    function renderIcons() {
-      iconsContainer.innerHTML = '';
-      const items = techData[activeCategory];
-      items.forEach((item, index) => {
-        const box = document.createElement('div');
-        box.className = 'tech-icon-box brutal-border brutal-shadow';
-        box.style.animationDelay = `${index * 0.05}s`;
-        
-        box.innerHTML = `
-          <i data-lucide="${item.icon}"></i>
-          <span>${item.name}</span>
-        `;
-        iconsContainer.appendChild(box);
-      });
-      
-      // Re-initialize lucide icons for newly added elements
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
+  if (menuBtn && navOverlay && closeBtn) {
+    menuBtn.addEventListener('click', () => {
+      navOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    closeBtn.addEventListener('click', () => {
+      navOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+    navOverlay.addEventListener('click', (e) => {
+      if (e.target === navOverlay) {
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
       }
-    }
-
-    renderCategories();
-    renderIcons();
+    });
   }
+
+  /* ---- Project Filter ---- */
+  const filterBtns = document.querySelectorAll('.filter-pill');
+  const projectCards = document.querySelectorAll('.project-card-new');
+
+  if (filterBtns.length && projectCards.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          const categories = card.dataset.category || '';
+          if (filter === 'all' || categories.includes(filter)) {
+            card.classList.remove('hidden');
+            card.style.animation = 'none';
+            requestAnimationFrame(() => {
+              card.style.animation = 'cardFadeIn 0.4s ease forwards';
+            });
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  /* ---- Scroll-reveal for cards ---- */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.project-card-new, .exp-card, .cert-card, .contact-info-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease';
+    observer.observe(el);
+  });
+
 });
