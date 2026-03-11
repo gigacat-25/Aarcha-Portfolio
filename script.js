@@ -117,3 +117,57 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// ── Dynamic Hero Name Sweep ──
+const heroName = document.querySelector('.hero-name');
+const animatedRules = document.querySelectorAll('.rule-red, .div-line-red');
+let fillPercent = 0;
+let targetPercent = 0;
+let maskX = 50, maskY = 50;
+
+if (heroName) {
+  heroName.addEventListener('mousemove', (e) => {
+    const rect = heroName.getBoundingClientRect();
+    maskX = ((e.clientX - rect.left) / rect.width) * 100;
+    maskY = ((e.clientY - rect.top) / rect.height) * 100;
+    heroName.style.setProperty('--x', `${maskX}%`);
+    heroName.style.setProperty('--y', `${maskY}%`);
+  });
+
+  heroName.addEventListener('mouseenter', () => { targetPercent = 150; });
+  heroName.addEventListener('mouseleave', () => { targetPercent = 0; });
+
+  function animateSweep() {
+    fillPercent += (targetPercent - fillPercent) * 0.12;
+    heroName.style.setProperty('--p', `${fillPercent}%`);
+    
+    // ── Scroll-driven Rule Motion ──
+    const scrollPos = window.scrollY;
+    
+    animatedRules.forEach(rule => {
+      const parent = rule.parentElement;
+      const rect = parent.getBoundingClientRect();
+      
+      // Find exactly where the element sits in the document
+      const absoluteTop = rect.top + scrollPos;
+      
+      // Calculate the scroll position at which the element comes into view.
+      // Math.max(0, ...) ensures elements already on screen at load (like Hero) start fully at the right edge (0 movement).
+      const startScrollY = Math.max(0, absoluteTop - window.innerHeight + 50);
+      
+      if (scrollPos > startScrollY) {
+        // Dynamically scale the speed so the red line crosses the entire width
+        // exactly as you scroll past the element
+        const speed = (rect.width + 100) / window.innerHeight;
+        const move = (scrollPos - startScrollY) * Math.max(0.5, speed);
+        rule.style.transform = `translateX(-${move}px)`;
+      } else {
+        // Keeps the red line resting perfectly at the right edge before scrolling
+        rule.style.transform = `translateX(0)`;
+      }
+    });
+
+    requestAnimationFrame(animateSweep);
+  }
+  animateSweep();
+}

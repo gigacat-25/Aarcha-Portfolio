@@ -166,9 +166,24 @@ a { color: inherit; text-decoration: none; }
   line-height: 0.9;
   letter-spacing: -0.03em;
   text-transform: uppercase;
-  color: var(--black);
   margin-bottom: 1.5rem;
+  width: fit-content;
+  position: relative;
+  
+  /* Dynamic Origin Sweep */
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%), 
+    var(--red) var(--p, 0%), 
+    var(--black) var(--p, 0%)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: default;
+  transition: none; /* Handled by JS for retro feel */
 }
+
+
 
 .name-first {
   font-size: clamp(4rem, 12vw, 8rem);
@@ -176,32 +191,30 @@ a { color: inherit; text-decoration: none; }
 
 .name-last {
   font-size: clamp(1.5rem, 5vw, 3rem);
-  opacity: 0.8;
   display: block;
-  margin-top: -0.5rem;
+  margin-top: 0.2rem;
+  letter-spacing: 0.1em;
 }
 
 
 .name-rule {
-  display: flex;
-  align-items: center;
   width: 100%;
-  height: 6px;
-  gap: 0;
-  margin-bottom: 1.25rem;
-  overflow: hidden;
-}
-.rule-line {
-  flex: 1;
-  height: 100%;
+  height: 2px;
   background: var(--black);
-  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
+
 .rule-red {
-  width: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
   height: 100%;
   background: var(--red);
-  display: block;
+  will-change: transform;
 }
 
 .hero-subtitle {
@@ -269,11 +282,22 @@ a { color: inherit; text-decoration: none; }
 
 .div-line {
   flex: 1;
-  height: 3px;
-  display: flex;
+  height: 2px;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
 }
-.div-line-black { flex: 1; background: var(--black); }
-.div-line-red { width: 48px; background: var(--red); }
+
+.div-line-red {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background: var(--red);
+  will-change: transform;
+}
+
 
 /* ============================================================
    PROJECTS GRID
@@ -618,6 +642,22 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.08em;
   border-top: 1px solid #222;
   padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-credit {
+  opacity: 0.7;
+  font-style: italic;
+}
+.credit-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.credit-link:hover {
+  color: var(--red);
+  text-decoration: underline;
 }
 
 /* ============================================================
