@@ -280,6 +280,38 @@ nav {
   display: inline-block;
 }
 
+/* Experience Section */
+.experience-item {
+  margin-bottom: 1.5rem;
+}
+
+.exp-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.exp-header h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.exp-company {
+  font-weight: 700;
+  font-size: 0.9rem;
+  background-color: var(--accent-yellow);
+  padding: 0.1rem 0.5rem;
+  border: 2px solid var(--border-color);
+}
+
+.exp-dates {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
 /* Portfolio Grid */
 .portfolio-grid {
   display: grid;
@@ -427,8 +459,8 @@ nav {
   background-color: #93c5fd;
 }
 
-.social-btn.twitter {
-  background-color: #a7f3d0;
+.social-btn.portfolio {
+  background-color: #d8b4fe;
 }
 
 .social-btn.email {

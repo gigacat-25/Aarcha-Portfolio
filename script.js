@@ -7,30 +7,44 @@ document.addEventListener('DOMContentLoaded', () => {
       { name: 'JavaScript', icon: 'file-json' },
       { name: 'React', icon: 'atom' },
       { name: 'Next.js', icon: 'triangle' },
-      { name: 'Tailwind', icon: 'wind' }
+      { name: 'Tailwind', icon: 'wind' },
+      { name: 'Material UI', icon: 'layout' }
     ],
     Languages: [
+      { name: 'Python', icon: 'terminal' },
       { name: 'JavaScript', icon: 'file-json' },
       { name: 'TypeScript', icon: 'file-type-2' },
-      { name: 'Python', icon: 'terminal' },
-      { name: 'C++', icon: 'file-code' }
+      { name: 'HTML', icon: 'file-code-2' },
+      { name: 'CSS', icon: 'palette' },
+      { name: 'C', icon: 'file-code' }
     ],
     Backend: [
+      { name: 'Django', icon: 'server' },
       { name: 'Node.js', icon: 'server' },
-      { name: 'Express', icon: 'database' },
-      { name: 'Python', icon: 'terminal' },
-      { name: 'REST APIs', icon: 'network' }
+      { name: 'Firebase', icon: 'flame' },
+      { name: 'Supabase', icon: 'database' },
+      { name: 'Clerk', icon: 'lock' },
+      { name: 'Auth0', icon: 'shield' }
     ],
     Database: [
+      { name: 'MySQL', icon: 'database' },
       { name: 'MongoDB', icon: 'database' },
-      { name: 'PostgreSQL', icon: 'database' },
-      { name: 'MySQL', icon: 'database' }
+      { name: 'Firebase', icon: 'flame' },
+      { name: 'Supabase', icon: 'database' }
+    ],
+    AI: [
+      { name: 'Google Gemini', icon: 'sparkles' },
+      { name: 'LLaMA3', icon: 'brain' },
+      { name: 'GROQ', icon: 'zap' },
+      { name: 'OpenCV', icon: 'camera' },
+      { name: 'Kaboom.js', icon: 'gamepad-2' }
     ],
     Tools: [
       { name: 'Git', icon: 'git-branch' },
       { name: 'GitHub', icon: 'github' },
+      { name: 'Vercel', icon: 'triangle' },
       { name: 'VS Code', icon: 'code' },
-      { name: 'Docker', icon: 'box' },
+      { name: 'Canva', icon: 'image' },
       { name: 'Postman', icon: 'send' }
     ]
   };
