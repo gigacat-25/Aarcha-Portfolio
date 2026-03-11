@@ -3,194 +3,458 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aarcha Ullasan – AI/ML Engineer & Frontend Developer</title>
-  <meta name="description" content="Aarcha Ullasan — AI/ML Engineering student and aspiring Frontend Developer building AI-powered web applications.">
+  <title>Aarcha Ullasan</title>
+  <meta name="description" content="Aarcha Ullasan — AI/ML Engineering student & aspiring Frontend Developer from Bengaluru, India.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700;900&family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Hamburger Menu Button -->
-  <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <!-- ── NOISE OVERLAY ── -->
+  <div class="noise"></div>
 
-  <!-- Full Screen Nav Overlay -->
-  <div class="nav-overlay" id="navOverlay">
-    <button class="close-btn" id="closeBtn" aria-label="Close Menu">✕</button>
-    <nav class="overlay-nav">
-      <a href="index.html" class="overlay-link">Home</a>
-      <a href="about.html" class="overlay-link">About</a>
-      <a href="portfolio.html" class="overlay-link">Works</a>
-      <a href="contact.html" class="overlay-link">Contact</a>
-    </nav>
-  </div>
-
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
-    <div class="hero-bg"></div>
-
-    <!-- Decorative stars -->
-    <div class="star star-4" style="top:12%;left:18%;font-size:2.5rem;">✦</div>
-    <div class="star star-4" style="top:30%;right:20%;font-size:3rem;animation-delay:0.5s">✦</div>
-    <div class="star star-4" style="bottom:25%;left:30%;font-size:1.8rem;animation-delay:1s">✦</div>
-    <div class="star star-4" style="top:20%;left:55%;font-size:1.4rem;animation-delay:1.5s">✦</div>
-    <div class="star star-4" style="bottom:35%;right:15%;font-size:2rem;animation-delay:0.8s">✦</div>
-    <div class="star-plus" style="top:15%;left:40%;">+</div>
-    <div class="star-plus" style="top:40%;left:10%;">+</div>
-    <div class="star-plus" style="bottom:20%;right:35%;">+</div>
-    <div class="star-plus" style="top:60%;left:60%;">+</div>
-    <div class="star-plus" style="top:25%;right:40%;">+</div>
-
-    <div class="hero-content">
-      <div class="hero-orbit-ring"></div>
-      <h1 class="hero-name">Aarcha</h1>
-      <p class="hero-subtitle">AI/ML ENGINEER &nbsp;·&nbsp; FRONTEND DEVELOPER</p>
+  <!-- ── STATUS BAR ── -->
+  <header class="status-bar">
+    <div class="status-left">
+      <span class="open-badge">
+        <span class="open-dot"></span>
+        OPEN TO WORK
+      </span>
+      <span class="status-sep">|</span>
+      <span class="status-mono">Bengaluru, India</span>
+      <span class="status-mono">Remote OK</span>
+      <span class="status-mono">Relocate OK</span>
     </div>
-  </section>
-
-  <!-- MARQUEE STRIP -->
-  <div class="marquee-strip">
-    <div class="marquee-track">
-      <span>✦ ImpactOne &nbsp;</span>
-      <span>✦ Wandere.ai &nbsp;</span>
-      <span>✦ Vani Vision &nbsp;</span>
-      <span>✦ StackSwipe &nbsp;</span>
-      <span>✦ Sign Language AI &nbsp;</span>
-      <span>✦ Pantry Tracker &nbsp;</span>
-      <span>✦ Safebites AI &nbsp;</span>
-      <span>✦ AI Chatbot &nbsp;</span>
-      <span>✦ AI Flashcards &nbsp;</span>
-      <span>✦ ImpactOne &nbsp;</span>
-      <span>✦ Wandere.ai &nbsp;</span>
-      <span>✦ Vani Vision &nbsp;</span>
-      <span>✦ StackSwipe &nbsp;</span>
-      <span>✦ Sign Language AI &nbsp;</span>
-      <span>✦ Pantry Tracker &nbsp;</span>
-      <span>✦ Safebites AI &nbsp;</span>
+    <div class="status-right">
+      <span class="clock-mono" id="clock"></span>
     </div>
-  </div>
+  </header>
 
-  <!-- ABOUT SECTION -->
-  <section class="about-section" id="about">
-    <div class="about-bg"></div>
+  <!-- ── MAIN CONTENT ── -->
+  <main class="main-content">
 
-    <div class="star star-4 star-yellow" style="top:10%;left:5%;font-size:3rem;">✦</div>
-    <div class="star star-4 star-yellow" style="top:55%;right:8%;font-size:2rem;animation-delay:0.6s">✦</div>
-    <div class="star-plus star-white" style="top:20%;right:25%;">+</div>
-    <div class="star-plus star-white" style="bottom:30%;left:20%;">+</div>
-
-    <div class="section-heading-wrapper">
-      <h2 class="section-script">About Me</h2>
-    </div>
-
-    <div class="about-content">
-      <div class="about-text">
-        <p class="about-desc">
-          Crafting digital experiences that sparkle with
-          <span class="highlight-pill">innovation</span>
-          and radiate a lively charm is my forte. I bring ideas to life, from
-          <span class="highlight-pill yellow-pill">AI-powered</span>
-          tools to sleek front-end interfaces — ready to make an impact.
-        </p>
-        <p class="about-desc" style="margin-top: 1.5rem;">
-          I'm a final-year B.E. student in <span class="highlight-pill">AI &amp; ML</span>
-          at Impact College, Bengaluru. Former Software Engineering Fellow at
-          <span class="highlight-pill yellow-pill">Headstarter AI</span>,
-          TEDx Lead Organizer, and #758-ranked open source contributor in GSSoC.
-        </p>
-        <div class="about-ctas">
-          <a href="portfolio.html" class="pill-btn">See My Works ✦</a>
-          <a href="contact.html" class="pill-btn-outline">Get In Touch</a>
+    <!-- ── HERO CARD ── -->
+    <section class="hero-card" data-reveal>
+      <div class="hero-inner">
+        <div class="hero-text-block">
+          <p class="hello-label">HELLO, I'M</p>
+          <h1 class="hero-name">Aarcha<br>Ullasan</h1>
+          <div class="name-rule">
+            <span class="rule-line"></span>
+            <span class="rule-red"></span>
+          </div>
+          <p class="hero-subtitle"><span id="typed-text"></span><span class="cursor">_</span></p>
+          <div class="social-row">
+            <a href="mailto:aarcha.u@yahoo.com" class="social-btn" title="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+            <a href="https://github.com/aarch34" target="_blank" class="social-btn" title="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/aarcha-u" target="_blank" class="social-btn" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://aarch34.github.io/" target="_blank" class="social-btn" title="2D Portfolio">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-decoration">
+          <div class="deco-circle"></div>
+          <div class="deco-line-h"></div>
+          <div class="deco-line-v"></div>
         </div>
       </div>
-      <div class="about-avatar">
-        <div class="avatar-ring">
-          <span class="avatar-initial">A</span>
+      <!-- Scroll cue -->
+      <div class="scroll-cue">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
         </div>
-        <div class="avatar-label">AARCHA ULLASAN</div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EXPERIENCE SECTION -->
-  <section class="experience-section" id="experience">
-    <div class="star star-4" style="top:8%;right:10%;font-size:2rem;">✦</div>
-    <div class="star star-4" style="bottom:15%;left:5%;font-size:1.5rem;animation-delay:1s">✦</div>
-
-    <div class="section-heading-wrapper">
-      <h2 class="section-script" style="color: #7B4FBE;">Experience</h2>
+    <!-- ── SECTION DIVIDER ── -->
+    <div class="ed-divider" data-reveal>
+      <span class="div-label">PROJECTS</span>
+      <span class="div-line">
+        <span class="div-line-black"></span>
+        <span class="div-line-red"></span>
+      </span>
     </div>
 
-    <div class="exp-cards">
-      <div class="exp-card">
-        <div class="exp-card-tag">July 2024 – Oct 2024</div>
-        <h3 class="exp-title">Software Engineering Fellow</h3>
-        <div class="exp-company">Headstarter AI</div>
-        <p>Built AI-powered apps with Next.js, Firebase, and MongoDB. Designed responsive interfaces with Material UI.</p>
-      </div>
-      <div class="exp-card">
-        <div class="exp-card-tag">Oct 2022 – July 2025</div>
-        <h3 class="exp-title">Student Ambassador</h3>
-        <div class="exp-company">Viral Fission</div>
-        <p>Organized blockchain gaming events for 100+ participants. Created promotional content to boost engagement.</p>
-      </div>
-      <div class="exp-card">
-        <div class="exp-card-tag">Jan 2025 – Apr 2025</div>
-        <h3 class="exp-title">Lead Organizer &amp; Licensee</h3>
-        <div class="exp-company">TEDxICEAS</div>
-        <p>Organized TEDxICEAS 2025 — "Threads of Change" — attended by 100+ participants. Led logistics, curation &amp; design.</p>
-      </div>
-      <div class="exp-card">
-        <div class="exp-card-tag">Oct 2024 – Nov 2024</div>
-        <h3 class="exp-title">Open Source Contributor</h3>
-        <div class="exp-company">Girl Script SoC</div>
-        <p>Contributed to multiple OSS projects. Achieved <strong>#758</strong> rank among all participants based on contributions.</p>
-      </div>
-    </div>
-  </section>
+    <!-- ── PROJECTS ── -->
+    <section class="projects-section" id="projects-section" data-reveal>
+      <div class="projects-grid">
 
-  <!-- SKILLS SECTION -->
-  <section class="skills-section" id="skills">
-    <div class="section-heading-wrapper">
-      <h2 class="section-script">Skills</h2>
-    </div>
-    <div class="skills-cloud">
-      <span class="skill-pill">Python</span>
-      <span class="skill-pill">JavaScript</span>
-      <span class="skill-pill">TypeScript</span>
-      <span class="skill-pill">HTML &amp; CSS</span>
-      <span class="skill-pill">Next.js</span>
-      <span class="skill-pill">React</span>
-      <span class="skill-pill">Django</span>
-      <span class="skill-pill">Tailwind CSS</span>
-      <span class="skill-pill">Firebase</span>
-      <span class="skill-pill">Supabase</span>
-      <span class="skill-pill">MySQL</span>
-      <span class="skill-pill">MongoDB</span>
-      <span class="skill-pill">Google Gemini</span>
-      <span class="skill-pill">OpenCV</span>
-      <span class="skill-pill">Clerk</span>
-      <span class="skill-pill">Git &amp; GitHub</span>
-      <span class="skill-pill">Vercel</span>
-      <span class="skill-pill">Postman</span>
-      <span class="skill-pill">Canva</span>
-      <span class="skill-pill">Material UI</span>
-    </div>
-  </section>
+        <a href="https://github.com/aarch34/ImpactOne" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#001</span>
+          </div>
+          <h3 class="proj-title">ImpactOne</h3>
+          <p class="proj-desc">AI-powered Smart Facility Booking for college students. Google Gemini recommendations, Clerk auth & Supabase.</p>
+          <div class="proj-tags">
+            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Gemini</span><span class="tag">Supabase</span>
+          </div>
+        </a>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p class="footer-text">Let's build something <span class="highlight-pill">magical</span> together ✦</p>
-    <div class="footer-links">
-      <a href="https://github.com/aarch34" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/aarcha-u" target="_blank">LinkedIn</a>
-      <a href="mailto:aarcha.u@yahoo.com">Email</a>
+        <a href="https://devfolio.co/projects/wandereai-9536" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#002</span>
+          </div>
+          <h3 class="proj-title">Wandere.ai</h3>
+          <p class="proj-desc">Hackathon winner — Hack This Fall 2024. AI travel planner crafting custom daily itineraries with real-time data.</p>
+          <div class="proj-tags">
+            <span class="tag">React</span><span class="tag">Python</span><span class="tag">Gemini</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/aarch34/vani-vision" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#003</span>
+          </div>
+          <h3 class="proj-title">Vani Vision</h3>
+          <p class="proj-desc">Assistive AI for visually impaired. OCR, emotion engine, offline TTS and multilingual support.</p>
+          <div class="proj-tags">
+            <span class="tag">Python</span><span class="tag">OCR</span><span class="tag">TTS</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/aarch34/Sign-language-translation" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#004</span>
+          </div>
+          <h3 class="proj-title">Sign Language Translator</h3>
+          <p class="proj-desc">Real-time ASL gesture recognition using CNN + OpenCV. Trained on custom webcam data.</p>
+          <div class="proj-tags">
+            <span class="tag">Python</span><span class="tag">CNN</span><span class="tag">OpenCV</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/aarch34/StackSwipe" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#005</span>
+          </div>
+          <h3 class="proj-title">StackSwipe</h3>
+          <p class="proj-desc">Tinder-style dev networking with AI ice-breakers, Firebase real-time sync, TypeScript UI.</p>
+          <div class="proj-tags">
+            <span class="tag">Next.js</span><span class="tag">Firebase</span><span class="tag">TypeScript</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/aarch34/Safebites-AI" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#006</span>
+          </div>
+          <h3 class="proj-title">Safebites AI</h3>
+          <p class="proj-desc">AI-powered allergy-friendly recipe recommender using GROQ with real-time Next.js interface.</p>
+          <div class="proj-tags">
+            <span class="tag">Next.js</span><span class="tag">GROQ</span><span class="tag">Clerk</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/aarch34/AI-Flashcards" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#007</span>
+          </div>
+          <h3 class="proj-title">AI Flashcards</h3>
+          <p class="proj-desc">Study SaaS auto-generating flashcards from user text using LLaMA3 with interactive card review.</p>
+          <div class="proj-tags">
+            <span class="tag">Next.js</span><span class="tag">LLaMA3</span><span class="tag">TypeScript</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/aarch34/Pantry-Tracker" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#008</span>
+          </div>
+          <h3 class="proj-title">Pantry Tracker</h3>
+          <p class="proj-desc">Real-time inventory tracking with Material UI + Firebase. Add, remove, search at speed.</p>
+          <div class="proj-tags">
+            <span class="tag">Next.js</span><span class="tag">Firebase</span><span class="tag">Material UI</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/aarch34/E-commerce" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#009</span>
+          </div>
+          <h3 class="proj-title">Jewelry E-Commerce</h3>
+          <p class="proj-desc">Full-stack Django e-commerce with MySQL, auth, cart, and order processing.</p>
+          <div class="proj-tags">
+            <span class="tag">Django</span><span class="tag">MySQL</span><span class="tag">Python</span>
+          </div>
+        </a>
+
+        <a href="https://aarch34.github.io/" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#010</span>
+          </div>
+          <h3 class="proj-title">2D RPG Portfolio</h3>
+          <p class="proj-desc">Interactive 2D game portfolio built with Kaboom.js. Navigate rooms to discover projects & skills.</p>
+          <div class="proj-tags">
+            <span class="tag">Kaboom.js</span><span class="tag">JavaScript</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/aarch34/AI-Chatbot" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#011</span>
+          </div>
+          <h3 class="proj-title">AI Chatbot</h3>
+          <p class="proj-desc">Real-time AI response streaming chatbot powered by Google Gemini API, built in React.</p>
+          <div class="proj-tags">
+            <span class="tag">React</span><span class="tag">Gemini</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/aarch34/nexmeet" target="_blank" class="proj-card" data-card>
+          <div class="proj-card-top">
+            <span class="proj-num">#012</span>
+          </div>
+          <h3 class="proj-title">NexMeet</h3>
+          <p class="proj-desc">Open-source contribution via GSSoC 2024. Professional networking platform ranked #758.</p>
+          <div class="proj-tags">
+            <span class="tag">Open Source</span><span class="tag">GSSoC</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ── DIVIDER ── -->
+    <div class="ed-divider" data-reveal>
+      <span class="div-label">RESUME</span>
+      <span class="div-line">
+        <span class="div-line-black"></span>
+        <span class="div-line-red"></span>
+      </span>
     </div>
-    <p class="footer-copy">© 2025 Aarcha Ullasan</p>
-  </footer>
+
+    <!-- ── RESUME ── -->
+    <section class="resume-section" id="resume-section" data-reveal>
+
+      <div class="resume-block">
+        <div class="resume-label-col">
+          <span class="resume-vl"></span>
+          <span class="resume-label">EXPERIENCE</span>
+        </div>
+        <div class="resume-entries">
+
+          <div class="resume-entry" data-card>
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-role">Software Engineering Fellow</h3>
+                <p class="entry-company">Headstarter AI</p>
+              </div>
+              <span class="entry-date">Jul – Oct 2024</span>
+            </div>
+            <div class="entry-tags">
+              <span class="tag">Next.js</span><span class="tag">Firebase</span><span class="tag">MongoDB</span><span class="tag">Material UI</span>
+            </div>
+            <ul class="entry-bullets">
+              <li>Built and deployed 5 AI-powered web apps in 7 weeks using Next.js, Firebase & MongoDB.</li>
+              <li>Designed responsive UIs and implemented real-time data syncing across projects.</li>
+              <li>Coached weekly by engineers from Google, Amazon, and Bloomberg.</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry" data-card>
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-role">Lead Organizer &amp; Licensee</h3>
+                <p class="entry-company">TEDxICEAS</p>
+              </div>
+              <span class="entry-date">Jan – Apr 2025</span>
+            </div>
+            <div class="entry-tags">
+              <span class="tag">Leadership</span><span class="tag">Event Mgmt</span><span class="tag">Design</span>
+            </div>
+            <ul class="entry-bullets">
+              <li>Organized TEDxICEAS 2025 — "Threads of Change" — 100+ attendees.</li>
+              <li>Led cross-functional team: logistics, speakers, design, marketing.</li>
+              <li>Secured TED license and managed all TED organization communications.</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry" data-card>
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-role">Open Source Contributor</h3>
+                <p class="entry-company">Girl Script Summer of Code (GSSoC)</p>
+              </div>
+              <span class="entry-date">Oct – Nov 2024</span>
+            </div>
+            <div class="entry-tags">
+              <span class="tag">Git</span><span class="tag">React</span><span class="tag">Open Source</span>
+            </div>
+            <ul class="entry-bullets">
+              <li>Contributed bug fixes and features across multiple open-source repos.</li>
+              <li>Achieved <strong>#758 rank</strong> among all participants.</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry" data-card>
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-role">Student Ambassador</h3>
+                <p class="entry-company">Viral Fission</p>
+              </div>
+              <span class="entry-date">Oct 2022 – Jul 2025</span>
+            </div>
+            <div class="entry-tags">
+              <span class="tag">Community</span><span class="tag">Marketing</span><span class="tag">Blockchain</span>
+            </div>
+            <ul class="entry-bullets">
+              <li>Organized blockchain gaming events for 100+ participants on campus.</li>
+              <li>Created promotional content and managed engagement campaigns.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="resume-block" style="margin-top:3rem">
+        <div class="resume-label-col">
+          <span class="resume-vl"></span>
+          <span class="resume-label">EDUCATION</span>
+        </div>
+        <div class="resume-entries">
+          <div class="resume-entry" data-card>
+            <div class="entry-header">
+              <div>
+                <h3 class="entry-role">B.E. — Artificial Intelligence &amp; Machine Learning</h3>
+                <p class="entry-company">Impact College of Engineering and Applied Sciences, Bengaluru</p>
+              </div>
+              <span class="entry-date">2021 – 2025</span>
+            </div>
+            <ul class="entry-bullets">
+              <li>Specialised in ML, deep learning, computer vision, and NLP.</li>
+              <li>Built CNN gesture recognition, LLM-powered SaaS, and AI assistive tools.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── DIVIDER ── -->
+    <div class="ed-divider" data-reveal>
+      <span class="div-label">CERTIFICATIONS</span>
+      <span class="div-line">
+        <span class="div-line-black"></span>
+        <span class="div-line-red"></span>
+      </span>
+    </div>
+
+    <!-- ── CERTIFICATIONS ── -->
+    <section class="certs-section" id="certs-section" data-reveal>
+      <div class="certs-list">
+        <div class="cert-row" data-card>
+          <span class="cert-name">Google AI Essentials</span>
+          <span class="cert-issuer">Google · March 2025</span>
+        </div>
+        <div class="cert-row" data-card>
+          <span class="cert-name">Tata GenAI Data Analytics Job Simulation</span>
+          <span class="cert-issuer">Forage · Jan 2026</span>
+        </div>
+        <div class="cert-row" data-card>
+          <span class="cert-name">Postman Student Expert</span>
+          <span class="cert-issuer">Postman · API Design & Testing</span>
+        </div>
+        <div class="cert-row" data-card>
+          <span class="cert-name">Meta HTML &amp; CSS in Depth</span>
+          <span class="cert-issuer">Meta via Coursera</span>
+        </div>
+        <div class="cert-row" data-card>
+          <span class="cert-name">Meta Version Control</span>
+          <span class="cert-issuer">Meta via Coursera</span>
+        </div>
+        <div class="cert-row" data-card>
+          <span class="cert-name">GSSoC 2024 Contributor — Rank #758</span>
+          <span class="cert-issuer">Girl Script Foundation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIVIDER ── -->
+    <div class="ed-divider" data-reveal>
+      <span class="div-label">SKILLS</span>
+      <span class="div-line">
+        <span class="div-line-black"></span>
+        <span class="div-line-red"></span>
+      </span>
+    </div>
+
+    <!-- ── SKILLS ── -->
+    <section class="skills-section" id="skills-section" data-reveal>
+      <div class="skills-grid">
+        <div class="skill-group" data-card>
+          <h4 class="skill-label">LANGUAGES</h4>
+          <div class="skill-tags">
+            <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">C</span>
+          </div>
+        </div>
+        <div class="skill-group" data-card>
+          <h4 class="skill-label">FRONTEND</h4>
+          <div class="skill-tags">
+            <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Tailwind CSS</span><span class="tag">Material UI</span><span class="tag">Kaboom.js</span>
+          </div>
+        </div>
+        <div class="skill-group" data-card>
+          <h4 class="skill-label">BACKEND &amp; DB</h4>
+          <div class="skill-tags">
+            <span class="tag">Django</span><span class="tag">Node.js</span><span class="tag">Firebase</span><span class="tag">Supabase</span><span class="tag">MySQL</span><span class="tag">MongoDB</span>
+          </div>
+        </div>
+        <div class="skill-group" data-card>
+          <h4 class="skill-label">AI / ML</h4>
+          <div class="skill-tags">
+            <span class="tag">Google Gemini</span><span class="tag">LLaMA3</span><span class="tag">GROQ</span><span class="tag">OpenCV</span><span class="tag">CNN</span>
+          </div>
+        </div>
+        <div class="skill-group" data-card>
+          <h4 class="skill-label">TOOLS</h4>
+          <div class="skill-tags">
+            <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Vercel</span><span class="tag">Postman</span><span class="tag">Clerk</span><span class="tag">Canva</span><span class="tag">VS Code</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer" data-reveal>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <span class="footer-name">AARCHA ULLASAN</span>
+          <span class="footer-sub">AI / ML · FRONTEND · OPEN SOURCE</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/aarch34" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/aarcha-u" target="_blank">LinkedIn</a>
+          <a href="mailto:aarcha.u@yahoo.com">Email</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2025 Aarcha Ullasan</div>
+    </footer>
+
+  </main>
+
+  <!-- ── FLOATING FAB ── -->
+  <div class="fab-container" id="fabContainer">
+    <div class="fab-items" id="fabItems">
+      <a href="#projects-section" class="fab-item" title="Projects"><span class="fab-label">PR</span></a>
+      <a href="#resume-section" class="fab-item" title="Resume"><span class="fab-label">CV</span></a>
+      <a href="#certs-section" class="fab-item" title="Certifications"><span class="fab-label">CE</span></a>
+      <a href="#skills-section" class="fab-item" title="Skills"><span class="fab-label">SK</span></a>
+      <a href="https://github.com/aarch34" target="_blank" class="fab-item" title="GitHub"><span class="fab-label">GH</span></a>
+      <a href="mailto:aarcha.u@yahoo.com" class="fab-item" title="Email"><span class="fab-label">EM</span></a>
+    </div>
+    <button class="fab-trigger" id="fabTrigger" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
 
   <script src="script.js"></script>
 </body>

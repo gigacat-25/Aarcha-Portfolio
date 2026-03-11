@@ -1,79 +1,119 @@
-/* ============================================
-   SCRIPT.JS — Aarcha Portfolio
-   Menu Toggle + Project Filter
-   ============================================ */
+/* ============================================================
+   SCRIPT.JS — Editorial Portfolio
+   Clock + Typing + Scroll Reveal + FAB
+   ============================================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
+// ── Live Clock (IST) ──
+function updateClock() {
+  const el = document.getElementById('clock');
+  if (!el) return;
+  el.textContent = new Date().toLocaleTimeString('en-IN', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+  }) + ' IST';
+}
+updateClock();
+setInterval(updateClock, 1000);
 
-  /* ---- Hamburger Menu ---- */
-  const menuBtn = document.getElementById('menuBtn');
-  const closeBtn = document.getElementById('closeBtn');
-  const navOverlay = document.getElementById('navOverlay');
+// ── Typing Animation ──
+const phrases = [
+  'AI/ML Engineering Student',
+  'Frontend Developer',
+  'Open Source Contributor',
+  'Hackathon Enthusiast',
+  'TEDx Lead Organizer',
+];
+let pi = 0, ci = 0, deleting = false;
+const typed = document.getElementById('typed-text');
 
-  if (menuBtn && navOverlay && closeBtn) {
-    menuBtn.addEventListener('click', () => {
-      navOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-    closeBtn.addEventListener('click', () => {
-      navOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-    navOverlay.addEventListener('click', (e) => {
-      if (e.target === navOverlay) {
-        navOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
+function type() {
+  if (!typed) return;
+  const cur = phrases[pi];
+  if (deleting) {
+    typed.textContent = cur.substring(0, ci - 1);
+    ci--;
+  } else {
+    typed.textContent = cur.substring(0, ci + 1);
+    ci++;
   }
+  let delay = deleting ? 40 : 70;
+  if (!deleting && ci === cur.length) { delay = 2200; deleting = true; }
+  else if (deleting && ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; delay = 400; }
+  setTimeout(type, delay);
+}
+setTimeout(type, 900);
 
-  /* ---- Project Filter ---- */
-  const filterBtns = document.querySelectorAll('.filter-pill');
-  const projectCards = document.querySelectorAll('.project-card-new');
+// ── Scroll Reveal ──
+// Reveal [data-reveal] sections
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
 
-  if (filterBtns.length && projectCards.length) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Update active button
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-
-        projectCards.forEach(card => {
-          const categories = card.dataset.category || '';
-          if (filter === 'all' || categories.includes(filter)) {
-            card.classList.remove('hidden');
-            card.style.animation = 'none';
-            requestAnimationFrame(() => {
-              card.style.animation = 'cardFadeIn 0.4s ease forwards';
-            });
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
-    });
-  }
-
-  /* ---- Scroll-reveal for cards ---- */
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
+      // Stagger children with [data-card]
+      const cards = entry.target.querySelectorAll('[data-card]');
+      cards.forEach((card, i) => {
         setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, i * 60);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
+          card.classList.add('revealed');
+        }, i * 80);
+      });
 
-  document.querySelectorAll('.project-card-new, .exp-card, .cert-card, .contact-info-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease';
-    observer.observe(el);
+      sectionObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('[data-reveal]').forEach(el => {
+  sectionObserver.observe(el);
+});
+
+// Also handle [data-card] elements outside [data-reveal] containers
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      cardObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('[data-card]').forEach(el => {
+  cardObserver.observe(el);
+});
+
+// ── FAB Panel ──
+const fabTrigger = document.getElementById('fabTrigger');
+const fabItems = document.getElementById('fabItems');
+const fabContainer = document.getElementById('fabContainer');
+
+if (fabTrigger && fabItems) {
+  fabTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    fabItems.classList.toggle('open');
+    fabTrigger.classList.toggle('active');
   });
 
+  fabItems.querySelectorAll('.fab-item').forEach(item => {
+    item.addEventListener('click', () => {
+      fabItems.classList.remove('open');
+      fabTrigger.classList.remove('active');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (fabContainer && !fabContainer.contains(e.target)) {
+      fabItems.classList.remove('open');
+      fabTrigger.classList.remove('active');
+    }
+  });
+}
+
+// ── Smooth scroll for anchor links ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
