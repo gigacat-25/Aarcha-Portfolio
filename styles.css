@@ -140,19 +140,15 @@ a { color: inherit; text-decoration: none; }
    ============================================================ */
 .hero-card {
   background: var(--paper);
-  border: var(--border-width) solid var(--border);
-  outline: 4px solid var(--border);
-  outline-offset: 3px;
+  border: 1px solid var(--border);
   padding: 3.5rem 3rem 2.5rem;
   margin-bottom: 2rem;
   position: relative;
 }
 
+
 .hero-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
+  max-width: 640px;
 }
 
 .hero-text-block { flex: 1; }
@@ -166,14 +162,25 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-name {
-  font-size: clamp(3rem, 8vw, 5.5rem);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 0.9;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: var(--black);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
+
+.name-first {
+  font-size: clamp(4rem, 12vw, 8rem);
+}
+
+.name-last {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  opacity: 0.8;
+  display: block;
+  margin-top: -0.5rem;
+}
+
 
 .name-rule {
   display: flex;
@@ -237,80 +244,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--paper);
 }
 
-/* Hero decoration */
-.hero-decoration {
-  position: relative;
-  width: 160px;
-  height: 160px;
-  flex-shrink: 0;
-}
-.deco-circle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 100px;
-  height: 100px;
-  border: var(--border-width) solid var(--black);
-  border-radius: 50%;
-}
-.deco-circle::after {
-  content: '';
-  position: absolute;
-  inset: 12px;
-  border-radius: 50%;
-  background: var(--red);
-  opacity: 0.15;
-}
-.deco-line-h {
-  position: absolute;
-  top: 70px;
-  left: 0;
-  right: 0;
-  height: var(--border-width);
-  background: var(--black);
-}
-.deco-line-v {
-  position: absolute;
-  left: 70px;
-  top: 0;
-  bottom: 0;
-  width: var(--border-width);
-  background: var(--black);
-}
 
-/* Scroll cue */
-.scroll-cue {
-  position: absolute;
-  bottom: -28px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-.scroll-mouse {
-  width: 22px;
-  height: 34px;
-  border: var(--border-width) solid var(--black);
-  border-radius: 11px;
-  display: flex;
-  justify-content: center;
-  padding-top: 6px;
-  background: var(--bg);
-}
-.scroll-wheel {
-  width: 3px;
-  height: 6px;
-  background: var(--black);
-  border-radius: 2px;
-  animation: scrollDown 1.4s ease-in-out infinite;
-}
-@keyframes scrollDown {
-  0% { transform: translateY(0); opacity: 1; }
-  60% { transform: translateY(8px); opacity: 0.2; }
-  100% { transform: translateY(0); opacity: 1; }
-}
 
 /* ============================================================
    SECTION DIVIDERS
@@ -472,7 +406,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .resume-entry {
-  padding: 1.5rem;
+  padding: 2.5rem 2rem;
   border-bottom: var(--border-width) solid var(--border);
   background: var(--paper);
   transition: background 0.2s;
@@ -485,7 +419,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.25rem;
 }
 
 .entry-role {
@@ -538,6 +472,22 @@ a { color: inherit; text-decoration: none; }
   color: var(--red);
   font-weight: 700;
 }
+
+.entry-activities {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #ccc;
+}
+
+.entry-activities-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
 
 /* ============================================================
    CERTIFICATIONS
