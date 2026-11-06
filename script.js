@@ -21,6 +21,30 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach((el) => el.classList.add('revealed'));
 }
 
+// ── 1b. Stacked project folders ──
+// Folders stick and stack only on wide screens where each one fits fully
+// in the viewport; otherwise part of a folder would be hidden behind the next.
+const folderStack = document.querySelector('.folders');
+
+function updateFolderStacking() {
+  if (!folderStack) return;
+  folderStack.classList.add('is-stacking');
+  const fits = window.innerWidth > 960 && [...folderStack.querySelectorAll('.folder')].every((folder) => {
+    const top = parseFloat(getComputedStyle(folder).top) || 0;
+    return top + folder.offsetHeight <= window.innerHeight;
+  });
+  folderStack.classList.toggle('is-stacking', fits);
+}
+
+let stackTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(stackTimer);
+  stackTimer = setTimeout(updateFolderStacking, 150);
+});
+window.addEventListener('load', updateFolderStacking);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateFolderStacking);
+updateFolderStacking();
+
 // ── 2. Active navigation link ──
 const navLinks = document.querySelectorAll('.nav-links a, .nav-contact');
 const navSections = [...navLinks]
